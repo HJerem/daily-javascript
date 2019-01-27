@@ -99,3 +99,157 @@ challenge3.forEach(function (item) {
     let value = makeSquares(item.inputValue);
     console.warn('--- RESULT --- value:', value, item.expectedValue === value);
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Daily Javascript: Email 4
+|--------------------------------------------------------------------------|
+*/
+
+function doubleLetter(string, index) {
+    let charToDouble = string.charAt(index);
+    return string.substring(0, index) + charToDouble + string.substring(index);
+}
+
+const challenge4 = [
+    {
+        inputValue: ['shipyard', 5],
+        expectedValue: 'shipyaard'
+    },
+    {
+        inputValue: ['water', 2],
+        expectedValue: 'watter'
+    },
+];
+
+challenge4.forEach(function (item) {
+    console.log('inputValue:', item.inputValue);
+    console.log('expectedValue:', item.expectedValue);
+    let value = doubleLetter(item.inputValue[0], item.inputValue[1]);
+    console.warn('--- RESULT --- value:', value, item.expectedValue === value);
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Daily Javascript: Email 5
+|--------------------------------------------------------------------------|
+*/
+
+function countMoves(string, arrangedString) {
+    // considering string and arrangedString contains same letters
+    if (string.length !== arrangedString.length) {
+        return -1;
+    }
+
+    let indexNeedsToBeMoved = [];
+
+    // compare characters to know what needs to be moved
+    for (let i = 0; i < string.length; i++) {
+        if (string.charAt(i) !== arrangedString.charAt(i)) {
+            indexNeedsToBeMoved.push(i);
+        }
+    }
+    console.log('indexNeedsToBeMoved', indexNeedsToBeMoved);
+}
+
+const challenge5 = [
+    {
+        inputValue: ['twitter', 'ittertw'],
+        expectedValue: 5
+    },
+    {
+        inputValue: ['twitter', 'wtittre'],
+        expectedValue: 2
+    },
+];
+
+challenge5.forEach(function (item) {
+    console.log('inputValue:', item.inputValue);
+    console.log('expectedValue:', item.expectedValue);
+    let value = countMoves(item.inputValue[0], item.inputValue[1]);
+    console.warn('--- RESULT --- value:', value, item.expectedValue === value);
+});
+
+/*
+|--------------------------------------------------------------------------
+| Daily Javascript: Email 6
+|--------------------------------------------------------------------------|
+*/
+
+function noRepeatInSubstring(string) {
+    let count = 1;
+    let finalCount = 1;
+    for (let i = 0; i < string.length; i++) {
+        if (i + 1 < string.length) {
+            if (string.charAt(i) !== string.charAt(i + 1)) {
+                count++;
+            } else {
+                count = 1;
+            }
+        }
+        if(count > finalCount) {
+            finalCount = count;
+        }
+    }
+    return finalCount;
+}
+
+const challenge6 = [
+    {
+        inputValue: 'hooney',
+        expectedValue: 4
+    },
+    {
+        inputValue: 'aablle',
+        expectedValue: 3
+    },
+    {
+        inputValue: 'cccccc',
+        expectedValue: 1
+    },
+];
+
+challenge6.forEach(function (item) {
+    console.log('inputValue:', item.inputValue);
+    console.log('expectedValue:', item.expectedValue);
+    let value = noRepeatInSubstring(item.inputValue);
+    console.warn('--- RESULT --- value:', value, item.expectedValue === value);
+});
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Daily Javascript: Email 7
+|--------------------------------------------------------------------------|
+*/
+
+function putInOrder(firstArray, secondArray) {
+    let orderedArray = [];
+
+    return orderedArray;
+}
+
+const challenge7 = [
+    {
+        inputValue: [[1,3,5]],
+        expectedValue: 4
+    },
+    {
+        inputValue: 'aablle',
+        expectedValue: 3
+    },
+    {
+        inputValue: 'cccccc',
+        expectedValue: 1
+    },
+];
+
+challenge7.forEach(function (item) {
+    console.log('inputValue:', item.inputValue);
+    console.log('expectedValue:', item.expectedValue);
+    let value = putInOrder(item.inputValue[0], item.inputValue[1]);
+    console.warn('--- RESULT --- value:', value, item.expectedValue === value);
+});
