@@ -1,4 +1,4 @@
-"use strict";
+
 
 /*
 |--------------------------------------------------------------------------
@@ -6,35 +6,35 @@
 |--------------------------------------------------------------------------|
 */
 function simplifiedDirectory(path) {
-  let pathSimplified = "";
-  let splitted = path.split("/");
-  splitted.forEach(function(value, index) {
-    if (value === "..") {
+  let pathSimplified = '';
+  const splitted = path.split('/');
+  splitted.forEach((value, index) => {
+    if (value === '..') {
       delete splitted[index - 1];
       delete splitted[index];
-    } else if (value === ".") {
+    } else if (value === '.') {
       delete splitted[index];
     }
   });
-  splitted.forEach(function(value) {
-    pathSimplified += value + "/";
+  splitted.forEach((value) => {
+    pathSimplified += `${value }/`;
   });
   return pathSimplified.substring(0, pathSimplified.length - 1);
 }
 
 const challenge1 = [
   {
-    inputValue: "/root/.",
-    expectedValue: "/root"
+    inputValue: '/root/.',
+    expectedValue: '/root',
   },
   {
-    inputValue: "/games/football/..",
-    expectedValue: "/games"
+    inputValue: '/games/football/..',
+    expectedValue: '/games',
   },
   {
-    inputValue: "/weather/./clouds/../rain",
-    expectedValue: "/weather/rain"
-  }
+    inputValue: '/weather/./clouds/../rain',
+    expectedValue: '/weather/rain',
+  },
 ];
 
 // challenge1.forEach(function(item) {
@@ -68,13 +68,13 @@ const challenge1 = [
 */
 
 function makeSquares(int) {
-  let string = int.toString();
-  let newString = "";
+  const string = int.toString();
+  let newString = '';
   for (let i = 0; i < string.length; i++) {
     // convert to int and calculate square
     const intValue = parseInt(string.charAt(i));
     const square = intValue * intValue;
-    //convert back to string
+    // convert back to string
     newString += square.toString();
   }
 
@@ -85,12 +85,12 @@ function makeSquares(int) {
 const challenge3 = [
   {
     inputValue: 12,
-    expectedValue: 14
+    expectedValue: 14,
   },
   {
     inputValue: 1361,
-    expectedValue: 19361
-  }
+    expectedValue: 19361,
+  },
 ];
 
 // challenge3.forEach(function(item) {
@@ -107,19 +107,19 @@ const challenge3 = [
 */
 
 function doubleLetter(string, index) {
-  let charToDouble = string.charAt(index);
+  const charToDouble = string.charAt(index);
   return string.substring(0, index) + charToDouble + string.substring(index);
 }
 
 const challenge4 = [
   {
-    inputValue: ["shipyard", 5],
-    expectedValue: "shipyaard"
+    inputValue: ['shipyard', 5],
+    expectedValue: 'shipyaard',
   },
   {
-    inputValue: ["water", 2],
-    expectedValue: "watter"
-  }
+    inputValue: ['water', 2],
+    expectedValue: 'watter',
+  },
 ];
 
 // challenge4.forEach(function(item) {
@@ -141,7 +141,7 @@ function countMoves(string, arrangedString) {
     return -1;
   }
 
-  let indexNeedsToBeMoved = [];
+  const indexNeedsToBeMoved = [];
 
   // compare characters to know what needs to be moved
   for (let i = 0; i < string.length; i++) {
@@ -149,18 +149,18 @@ function countMoves(string, arrangedString) {
       indexNeedsToBeMoved.push(i);
     }
   }
-  console.log("indexNeedsToBeMoved", indexNeedsToBeMoved);
+  console.log('indexNeedsToBeMoved', indexNeedsToBeMoved);
 }
 
 const challenge5 = [
   {
-    inputValue: ["twitter", "ittertw"],
-    expectedValue: 5
+    inputValue: ['twitter', 'ittertw'],
+    expectedValue: 5,
   },
   {
-    inputValue: ["twitter", "wtittre"],
-    expectedValue: 2
-  }
+    inputValue: ['twitter', 'wtittre'],
+    expectedValue: 2,
+  },
 ];
 
 // challenge5.forEach(function(item) {
@@ -196,17 +196,17 @@ function noRepeatInSubstring(string) {
 
 const challenge6 = [
   {
-    inputValue: "hooney",
-    expectedValue: 4
+    inputValue: 'hooney',
+    expectedValue: 4,
   },
   {
-    inputValue: "aablle",
-    expectedValue: 3
+    inputValue: 'aablle',
+    expectedValue: 3,
   },
   {
-    inputValue: "cccccc",
-    expectedValue: 1
-  }
+    inputValue: 'cccccc',
+    expectedValue: 1,
+  },
 ];
 
 // challenge6.forEach(function(item) {
@@ -223,13 +223,13 @@ const challenge6 = [
 */
 
 function putInOrder(firstArray, secondArray) {
-  let orderedArray = firstArray.concat(secondArray);
+  const orderedArray = firstArray.concat(secondArray);
   return orderedArray.sort((a, b) => a - b);
 }
 
 function compareArray(firstArray, secondArray) {
   let equal = true;
-  firstArray.forEach(function(value, index) {
+  firstArray.forEach((value, index) => {
     if (value !== secondArray[index]) {
       equal = false;
     }
@@ -240,16 +240,16 @@ function compareArray(firstArray, secondArray) {
 const challenge7 = [
   {
     inputValue: [[1, 3, 5], [2, 4, 6]],
-    expectedValue: [1, 2, 3, 4, 5, 6]
+    expectedValue: [1, 2, 3, 4, 5, 6],
   },
   {
     inputValue: [[2, 3, 7, 10], [1, 4, 9]],
-    expectedValue: [1, 2, 3, 4, 7, 9, 10]
+    expectedValue: [1, 2, 3, 4, 7, 9, 10],
   },
   {
     inputValue: [[1, 2], [2, 3, 4]],
-    expectedValue: [1, 2, 2, 3, 4]
-  }
+    expectedValue: [1, 2, 2, 3, 4],
+  },
 ];
 
 // challenge7.forEach(function (item) {
@@ -270,16 +270,16 @@ const challenge7 = [
 */
 
 function noDuplicates(string) {
-  let numberOfRearrangements = 0;
+  const numberOfRearrangements = 0;
 
   return numberOfRearrangements;
 }
 
 const challenge8 = [
   {
-    inputValue: "cook",
-    expectedValue: 4
-  }
+    inputValue: 'cook',
+    expectedValue: 4,
+  },
 ];
 
 // challenge8.forEach(function(item) {
@@ -298,8 +298,8 @@ const challenge8 = [
 function matchDigits(firstNumber, secondNumber) {
   let nbDigitsMatch = 0;
   // compare each digit of the two numbers to count how many digits match
-  let sFirstNumber = firstNumber.toString();
-  let sSecondNumber = secondNumber.toString();
+  const sFirstNumber = firstNumber.toString();
+  const sSecondNumber = secondNumber.toString();
   for (let i = 0; i < sFirstNumber.length; i++) {
     if (sFirstNumber.charAt(i) === sSecondNumber.charAt(i)) {
       nbDigitsMatch++;
@@ -311,19 +311,19 @@ function matchDigits(firstNumber, secondNumber) {
 const challenge9 = [
   {
     inputValue: [1221, 2123],
-    expectedValue: 1
+    expectedValue: 1,
   },
   {
     inputValue: [14352, 16335],
-    expectedValue: 2
-  }
+    expectedValue: 2,
+  },
 ];
 
-challenge9.forEach(function(item) {
-  console.log("inputValue:", item.inputValue);
-  console.log("expectedValue:", item.expectedValue);
-  let value = matchDigits(item.inputValue[0], item.inputValue[1]);
-  console.warn("--- RESULT --- value:", value, item.expectedValue === value);
+challenge9.forEach((item) => {
+  console.log('inputValue:', item.inputValue);
+  console.log('expectedValue:', item.expectedValue);
+  const value = matchDigits(item.inputValue[0], item.inputValue[1]);
+  console.warn('--- RESULT --- value:', value, item.expectedValue === value);
 });
 
 /*
@@ -333,11 +333,10 @@ challenge9.forEach(function(item) {
 */
 
 function inBetween(string, number) {
-  let sNumber = number.toString();
-  let finalString = "";
-  let maxLength =
-    sNumber.length > string.length ? sNumber.length : string.length;
-  for (let i = 0; i < maxLength; i++) {
+  const sNumber = number.toString();
+  let finalString = '';
+  const maxLength = sNumber.length > string.length ? sNumber.length : string.length;
+  for (let i = 0; i < maxLength; i += 1) {
     finalString += string.charAt(i) + sNumber.charAt(i);
   }
   return finalString;
@@ -345,24 +344,24 @@ function inBetween(string, number) {
 
 const challenge10 = [
   {
-    inputValue: ["hurry", 1234],
-    expectedValue: "h1u2r3r4y"
+    inputValue: ['hurry', 1234],
+    expectedValue: 'h1u2r3r4y',
   },
   {
-    inputValue: ["number", 345],
-    expectedValue: "n3u4m5ber"
+    inputValue: ['number', 345],
+    expectedValue: 'n3u4m5ber',
   },
   {
-    inputValue: ["cat", 345678],
-    expectedValue: "c3a4t5678"
-  }
+    inputValue: ['cat', 345678],
+    expectedValue: 'c3a4t5678',
+  },
 ];
 
-challenge10.forEach(function(item) {
-  console.log("inputValue:", item.inputValue);
-  console.log("expectedValue:", item.expectedValue);
-  let value = inBetween(item.inputValue[0], item.inputValue[1]);
-  console.warn("--- RESULT --- value:", value, item.expectedValue === value);
+challenge10.forEach((item) => {
+  console.log('inputValue:', item.inputValue);
+  console.log('expectedValue:', item.expectedValue);
+  const value = inBetween(item.inputValue[0], item.inputValue[1]);
+  console.warn('--- RESULT --- value:', value, item.expectedValue === value);
 });
 
 /*
@@ -372,15 +371,14 @@ challenge10.forEach(function(item) {
 */
 
 function reverseInBetween(string, number) {
-  let sNumber = number.toString();
-  let sNumberReversed = "";
+  const sNumber = number.toString();
+  let sNumberReversed = '';
   // reverse number
   for (let i = sNumber.length; i >= 0; i--) {
     sNumberReversed += sNumber.charAt(i);
   }
-  let finalString = "";
-  let maxLength =
-    sNumber.length > string.length ? sNumber.length : string.length;
+  let finalString = '';
+  const maxLength = sNumber.length > string.length ? sNumber.length : string.length;
   for (let i = 0; i < maxLength; i++) {
     finalString += string.charAt(i) + sNumberReversed.charAt(i);
   }
@@ -389,17 +387,17 @@ function reverseInBetween(string, number) {
 
 const challenge11 = [
   {
-    inputValue: ["hurry", 1234],
-    expectedValue: "h4u3r2r1y"
+    inputValue: ['hurry', 1234],
+    expectedValue: 'h4u3r2r1y',
   },
   {
-    inputValue: ["number", 345],
-    expectedValue: "n5u4m3ber"
+    inputValue: ['number', 345],
+    expectedValue: 'n5u4m3ber',
   },
   {
-    inputValue: ["cat", 345678],
-    expectedValue: "c8a7t6543"
-  }
+    inputValue: ['cat', 345678],
+    expectedValue: 'c8a7t6543',
+  },
 ];
 
 // challenge11.forEach(function(item) {
