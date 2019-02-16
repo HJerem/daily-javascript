@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Daily Javascript: Email 1
+| ✔️ Daily Javascript: Email 1
 |--------------------------------------------------------------------------|
 */
 function simplifiedDirectory(path) {
@@ -46,7 +46,7 @@ const challenge1 = [
 
 /*
 |--------------------------------------------------------------------------
-| Daily Javascript: Email 2
+| ✔️ Daily Javascript: Email 2
 |--------------------------------------------------------------------------|
 |
 | for strings: indexOf (which finds the index of a string within a string), substr()
@@ -63,7 +63,7 @@ const challenge1 = [
 
 /*
 |--------------------------------------------------------------------------
-| Daily Javascript: Email 3
+| ✔️ Daily Javascript: Email 3
 |--------------------------------------------------------------------------|
 */
 
@@ -102,7 +102,7 @@ const challenge3 = [
 
 /*
 |--------------------------------------------------------------------------
-| Daily Javascript: Email 4
+| ✔️ Daily Javascript: Email 4
 |--------------------------------------------------------------------------|
 */
 
@@ -131,25 +131,56 @@ const challenge4 = [
 
 /*
 |--------------------------------------------------------------------------
-| Daily Javascript: Email 5 - TODO
+| ❌ Daily Javascript: Email 5
 |--------------------------------------------------------------------------|
 */
 
 function countMoves(string, arrangedString) {
+  let moves = 0;
   // considering string and arrangedString contains same letters
   if (string.length !== arrangedString.length) {
     return -1;
   }
 
-  const indexNeedsToBeMoved = [];
+  let firstStringPositions = [];
+  let secondStringPositions = [];
 
-  // compare characters to know what needs to be moved
   for (let i = 0; i < string.length; i++) {
-    if (string.charAt(i) !== arrangedString.charAt(i)) {
-      indexNeedsToBeMoved.push(i);
+    firstStringPositions[i] = string.charAt(i);
+  }
+  for (let i = 0; i < arrangedString.length; i++) {
+    secondStringPositions[i] = arrangedString.charAt(i);
+  }
+
+  console.log(firstStringPositions, secondStringPositions);
+  let correctPositions = [];
+  for (let i = 0; i < arrangedString.length; i++) {
+    if (firstStringPositions[i] === secondStringPositions[i]) {
+      correctPositions[i] = 1;
+    } else {
+      correctPositions[i] = 0;
     }
   }
-  console.log('indexNeedsToBeMoved', indexNeedsToBeMoved);
+  console.log("correctPositions", correctPositions);
+
+  let finalString = string.split("");
+  // for each letter in first string
+  // while (finalString !== arrangedString) {
+    for (let i = 0; i < string.length; i++) {
+      let initialChar = firstStringPositions[i];
+      let neededChar = secondStringPositions[i];
+
+      finalString
+
+
+      console.log(initialChar, neededChar);
+      console.log(finalString);
+      console.log(finalString.join(''));
+    }
+  // }
+
+
+  return moves;
 }
 
 const challenge5 = [
@@ -157,22 +188,22 @@ const challenge5 = [
     inputValue: ['twitter', 'ittertw'],
     expectedValue: 5,
   },
-  {
-    inputValue: ['twitter', 'wtittre'],
-    expectedValue: 2,
-  },
+  // {
+  //   inputValue: ["twitter", "wtittre"],
+  //   expectedValue: 2
+  // }
 ];
 
-// challenge5.forEach(function(item) {
-//   console.log("inputValue:", item.inputValue);
-//   console.log("expectedValue:", item.expectedValue);
-//   let value = countMoves(item.inputValue[0], item.inputValue[1]);
-//   console.warn("--- RESULT --- value:", value, item.expectedValue === value);
-// });
+challenge5.forEach(function(item) {
+  console.log("inputValue:", item.inputValue);
+  console.log("expectedValue:", item.expectedValue);
+  let value = countMoves(item.inputValue[0], item.inputValue[1]);
+  console.warn("--- RESULT --- value:", value, item.expectedValue === value);
+});
 
 /*
 |--------------------------------------------------------------------------
-| Daily Javascript: Email 6
+| ✔️ Daily Javascript: Email 6
 |--------------------------------------------------------------------------|
 */
 
@@ -218,7 +249,7 @@ const challenge6 = [
 
 /*
 |--------------------------------------------------------------------------
-| Daily Javascript: Email 7
+| ✔️ Daily Javascript: Email 7
 |--------------------------------------------------------------------------|
 */
 
@@ -265,7 +296,7 @@ const challenge7 = [
 
 /*
 |--------------------------------------------------------------------------
-| Daily Javascript: Email 8
+| ❌ Daily Javascript: Email 8
 |--------------------------------------------------------------------------|
 */
 
@@ -291,7 +322,7 @@ const challenge8 = [
 
 /*
 |--------------------------------------------------------------------------
-| Daily Javascript: Email 9
+| ✔️ Daily Javascript: Email 9
 |--------------------------------------------------------------------------|
 */
 
@@ -319,16 +350,16 @@ const challenge9 = [
   },
 ];
 
-challenge9.forEach((item) => {
-  console.log('inputValue:', item.inputValue);
-  console.log('expectedValue:', item.expectedValue);
-  const value = matchDigits(item.inputValue[0], item.inputValue[1]);
-  console.warn('--- RESULT --- value:', value, item.expectedValue === value);
-});
+// challenge9.forEach(function(item) {
+//   console.log("inputValue:", item.inputValue);
+//   console.log("expectedValue:", item.expectedValue);
+//   let value = matchDigits(item.inputValue[0], item.inputValue[1]);
+//   console.warn("--- RESULT --- value:", value, item.expectedValue === value);
+// });
 
 /*
 |--------------------------------------------------------------------------
-| Daily Javascript: Email 10
+| ✔️ Daily Javascript: Email 10
 |--------------------------------------------------------------------------|
 */
 
@@ -357,16 +388,16 @@ const challenge10 = [
   },
 ];
 
-challenge10.forEach((item) => {
-  console.log('inputValue:', item.inputValue);
-  console.log('expectedValue:', item.expectedValue);
-  const value = inBetween(item.inputValue[0], item.inputValue[1]);
-  console.warn('--- RESULT --- value:', value, item.expectedValue === value);
-});
+// challenge10.forEach(function(item) {
+//   console.log("inputValue:", item.inputValue);
+//   console.log("expectedValue:", item.expectedValue);
+//   let value = inBetween(item.inputValue[0], item.inputValue[1]);
+//   console.warn("--- RESULT --- value:", value, item.expectedValue === value);
+// });
 
 /*
 |--------------------------------------------------------------------------
-| Daily Javascript: Email 11
+| ✔️ Daily Javascript: Email 11
 |--------------------------------------------------------------------------|
 */
 
