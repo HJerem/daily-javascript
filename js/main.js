@@ -627,6 +627,32 @@ const challenge20 = [
 |--------------------------------------------------------------------------|
 */
 
+firstNode = null;
+
+function linkedListNode(val, nn) {
+  this.value = val;
+
+  this.nextNode = nn;
+}
+
+function createLinkedList() {
+  firstNode = new linkedListNode(1, null);
+
+  var topNode = firstNode;
+
+  for (var i = 2; i < 10; i++) {
+    topNode.nextNode = new linkedListNode(i, null);
+
+    topNode = topNode.nextNode;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| ❌ Daily Javascript: Email 22
+|--------------------------------------------------------------------------|
+*/
+
 function findIntegersFromSum(intArray, sum) {
   // check if one or more of numbers in intArray can addition to sum
 }
@@ -638,9 +664,41 @@ const challenge20 = [
   }
 ];
 
-challenge20.forEach(function(item) {
+// challenge20.forEach(function(item) {
+//   console.log('inputValue:', item.inputValue);
+//   console.log('expectedValue:', item.expectedValue);
+//   let value = findIntegersFromSum(item.inputValue[0], item.inputValue[1]);
+//   console.warn('--- RESULT --- value:', value, item.expectedValue === value);
+// });
+
+/*
+|--------------------------------------------------------------------------
+| ❌ Daily Javascript: Email 23
+|--------------------------------------------------------------------------|
+*/
+
+function maxSum(intArray, sum) {
+  //
+}
+
+const challenge23 = [
+  {
+    inputValue: [-2, 1, -4, 1, 2, 3],
+    expectedValue: 6
+  },
+  {
+    inputValue: [1, 5, -10, 2, 5],
+    expectedValue: 7
+  },
+  {
+    inputValue: [34, -50, 41, 13, -5, 80],
+    expectedValue: 129
+  }
+];
+
+challenge23.forEach(function(item) {
   console.log('inputValue:', item.inputValue);
   console.log('expectedValue:', item.expectedValue);
-  let value = findIntegersFromSum(item.inputValue[0], item.inputValue[1]);
+  let value = maxSum(item.inputValue);
   console.warn('--- RESULT --- value:', value, item.expectedValue === value);
 });
